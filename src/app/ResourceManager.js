@@ -1,4 +1,4 @@
-import { loaders, AnimatedSprite, Sprite } from 'pixi.js';
+import { Loader, AnimatedSprite, Sprite } from 'pixi.js';
 import Signal from 'mini-signals';
 
 let _instance = null;
@@ -17,7 +17,7 @@ export default class ResourceManager {
   }
 
   load() {
-    this.loader = new loaders.Loader();
+    this.loader = new Loader();
     /**
      * Add texturepacker sheet below
      */

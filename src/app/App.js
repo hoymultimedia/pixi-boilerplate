@@ -1,4 +1,4 @@
-import { Application } from 'pixi.js';
+import { Application, Graphics } from 'pixi.js';
 import Stats from 'stats.js';
 import ResourceManager from 'app/ResourceManager';
 
@@ -17,10 +17,10 @@ export default class App {
     this.width = element.clientWidth;
     this.height = element.clientHeight;
     this.pixiApp = new Application(
-      this.width,
-      this.height,
       {
-        backgroundColor: 0xededed,
+        width: this.width,
+        height: this.height,
+        backgroundColor: 0xFFFFFF,
         antialias: true,
         resolution: window.devicePixelRatio,
         autoResize: true,
@@ -63,6 +63,12 @@ export default class App {
   }
 
   start() {
+    const graphic = new Graphics();
+    graphic.beginFill(0xFF0099);
+    graphic.drawRect(0, 0, 100, 100);
+    graphic.endFill();
+    this.stage.addChild(graphic);
+
     this.pixiApp.ticker.add((delta) => {
       if (this.stats) {
         this.stats.end();
