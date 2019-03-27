@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "rules": {
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "no-console": "off",
+    "padded-blocks": "off",
+    "no-mixed-operators": "off",
+    "no-bitwise": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off"
+  },
+  "settings": {
+    "import/extensions": [".js", ".jsx"],
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ]
+      },
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Regular.woff2') format('woff2'),
+    url('assets/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Bold.woff2') format('woff2'),
+    url('assets/fonts/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+}
+
