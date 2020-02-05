@@ -1,0 +1,44 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "no-console": "off",
+    "padded-blocks": "off",
+    "no-mixed-operators": "off",
+    "no-bitwise": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
+    "arrow-parens": "off",
+    "comma-dangle": "off"
+  },
+  "settings": {
+    "import/extensions": [
+      ".js",
+      ".jsx"
+    ],
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ]
+      },
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  }
+}
