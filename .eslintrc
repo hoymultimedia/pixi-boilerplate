@@ -1,24 +1,25 @@
 {
   "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
   "extends": ["airbnb", "prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "env": {
-      "browser": true,
-      "node": true,
-      "jasmine": true
-    },
-
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "no-console": "off",
+    "import/no-extraneous-dependencies": 0
   },
   "settings": {
-    "import/extensions": [".js", ".jsx"],
+    "import/extensions": [".js", ".jsx", "css", "scss"],
     "import/resolver": {
-      "node": {
-        "moduleDirectory": ["node_modules", "src"]
-      },
       "webpack": {
-        "config": "webpack.config.js"
+        "config": "./config/webpack.common.js"
+      },
+      "node": {
+        "moduleDirectory": ["src"]
       }
     }
   }

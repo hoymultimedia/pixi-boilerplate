@@ -1,4 +1,7 @@
+import App from 'app/App';
+
 window.onload = () => {
-  const app = document.getElementById('app');
-  console.log('onload! ', app);
+  const appElement = document.getElementById('app');
+  const app = new App(appElement);
+  console.log('app', app);
 };
