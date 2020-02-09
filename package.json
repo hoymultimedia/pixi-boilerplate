@@ -40,7 +40,8 @@
   },
   "dependencies": {
     "mini-signals": "^1.2.0",
-    "pixi.js": "^5.2.1"
+    "pixi.js": "^5.2.1",
+    "stats.js": "^0.17.0"
   },
   "browserslist": [
     "defaults"

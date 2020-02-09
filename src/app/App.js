@@ -1,11 +1,20 @@
 import { Application } from 'pixi.js';
+import Stats from 'stats.js';
 import Resources from './Resources';
 
 export default class App {
-  constructor(element) {
-    this.width = element.clientWidth;
-    this.height = element.clientHeight;
+  init(htmlElement) {
+    this.width = htmlElement.clientWidth;
+    this.height = htmlElement.clientHeight;
+    this.htmlElement = htmlElement;
 
+    window.addEventListener('resize', this.onResize);
+    this.setupApp();
+    this.setupStats();
+    this.setupLoading();
+  }
+
+  setupApp() {
     this.app = new Application({
       width: this.width,
       height: this.height,
@@ -13,10 +22,15 @@ export default class App {
       resolution: window.devicePixelRatio,
       backgroundColor: 0xff0099,
     });
-    element.appendChild(this.app.view);
+    this.htmlElement.appendChild(this.app.view);
+  }
 
-    window.addEventListener('resize', this.onResize);
+  setupStats() {
+    this.stats = new Stats();
+    document.body.appendChild(this.stats.dom);
+  }
 
+  setupLoading() {
     const resources = new Resources(this.app);
     resources.onLoaded.add(() => {
       this.start();
@@ -24,12 +38,23 @@ export default class App {
   }
 
   start() {
-    console.log('start()', this.app);
+    this.app.ticker.add(() => {
+      this.update();
+    });
+  }
+
+  update() {
+    this.stats.begin();
+
+    // update stuff
+
+    this.stats.end();
   }
 
   onResize = () => {
     const parent = this.app.view.parentNode;
-    console.log('w: ', parent.clientWidth);
-    this.app.renderer.resize(parent.clientWidth, parent.clientHeight);
+    if (this.app) {
+      this.app.renderer.resize(parent.clientWidth, parent.clientHeight);
+    }
   };
 }
