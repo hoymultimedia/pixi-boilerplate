@@ -18,6 +18,7 @@ export default class App {
     this.app = new Application({
       width: this.width,
       height: this.height,
+      antialias: true,
       autoDensity: true,
       resolution: window.devicePixelRatio,
       backgroundColor: 0xff0099,

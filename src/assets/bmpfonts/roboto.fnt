@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
    <font>
-       <info aa='1' size='25' smooth='1' stretchH='100' bold='0' padding='0,0,0,0' spacing='0,0' charset='' italic='0' unicode='0' face='Ericsson Hilda'/>
+       <info aa='1' size='25' smooth='1' stretchH='100' bold='0' padding='0,0,0,0' spacing='0,0' charset='' italic='0' unicode='0' face='roboto'/>
        <common scaleW='192' packed='0' pages='1' lineHeight='30' scaleH='192' base='24'/>
        <pages>
             <page id='0' file='roboto.png'/>
