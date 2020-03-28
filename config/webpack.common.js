@@ -24,6 +24,21 @@ module.exports = {
         ],
       },
       {
+        // JSON Loader
+        type: 'javascript/auto',
+        test: /\.(json)/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              context: 'src',
+            },
+          },
+        ],
+      },
+      {
         /**
          * Loader for bitmap fonts. (.fnt and .png from src/assets/bmpfonts/)
          * src/assets/bmpfonts/ is excluded in the default image loader.
@@ -48,6 +63,7 @@ module.exports = {
     alias: {
       app: path.resolve(__dirname, '../src/app/'),
       assets: path.resolve(__dirname, '../src/assets/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
     },
   },
   plugins: [
