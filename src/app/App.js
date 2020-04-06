@@ -1,5 +1,6 @@
 import { Application } from 'pixi.js';
 import Stats from 'stats.js';
+import appStore from './appStore';
 import Resources from './Resources';
 
 export default class App {
@@ -23,6 +24,9 @@ export default class App {
       resolution: window.devicePixelRatio,
       backgroundColor: 0xff0099,
     });
+    appStore.width = this.width;
+    appStore.height = this.height;
+    appStore.app = this.app;
     this.htmlElement.appendChild(this.app.view);
   }
 
