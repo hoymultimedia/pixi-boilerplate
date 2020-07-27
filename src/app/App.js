@@ -28,6 +28,7 @@ export default class App {
     appStore.height = this.height;
     appStore.app = this.app;
     this.htmlElement.appendChild(this.app.view);
+    this.display = this.app.stage;
   }
 
   setupStats() {

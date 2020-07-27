@@ -1,4 +1,8 @@
 export default class MathUtils {
+  static probability(n) {
+    return !!n && Math.random() <= n;
+  }
+
   static getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -93,5 +97,9 @@ export default class MathUtils {
 
   static isOdd(n) {
     return Math.abs(n % 2) === 1;
+  }
+
+  static isBetween(value, min, max) {
+    return (value - min) * (value - max) <= 0;
   }
 }

@@ -60,4 +60,18 @@ export default class Geom {
       this.rangeIntersect(r0.y, r0.y + r0.height, r1.y, r1.y + r1.height)
     );
   }
+
+  static getRandomPointInCircle(circle) {
+    const pos = {};
+    const t = 2 * Math.PI * Math.random();
+    const u = Math.random() + Math.random();
+    const r = u > 1 ? 2 - u : u;
+    const x = r * Math.cos(t);
+    const y = r * Math.sin(t);
+
+    pos.x = circle.x + x * circle.radius;
+    pos.y = circle.y + y * circle.radius;
+
+    return pos;
+  }
 }

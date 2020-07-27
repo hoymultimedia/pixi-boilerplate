@@ -24,6 +24,6 @@ export default class Utils {
   }
 
   static removeItem(array, item) {
-    return array.filter(e => e !== item);
+    return array.filter((e) => e !== item);
   }
 }

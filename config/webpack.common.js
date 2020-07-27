@@ -56,6 +56,26 @@ module.exports = {
           },
         ],
       },
+      {
+        /**
+         * Used for image urls in .html files
+         */
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attributes: {
+              list: [
+                {
+                  tag: 'img',
+                  attribute: 'src',
+                  type: 'src',
+                },
+              ],
+            },
+          },
+        },
+      },
     ],
   },
   resolve: {
