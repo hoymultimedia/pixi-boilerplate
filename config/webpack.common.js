@@ -24,6 +24,22 @@ module.exports = {
         ],
       },
       {
+        /** SVG Loaders
+
+         */
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/',
+            },
+          },
+        ],
+      },
+      {
         // JSON Loader
         type: 'javascript/auto',
         test: /\.(json)/,
@@ -32,8 +48,24 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]',
+              name: '[path][name][hash].[ext]',
               context: 'src',
+            },
+          },
+        ],
+      },
+      {
+        /**
+         * Font Loader
+         */
+        test: /\.(woff|woff2)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/fonts/',
             },
           },
         ],
@@ -57,9 +89,6 @@ module.exports = {
         ],
       },
       {
-        /**
-         * Used for image urls in .html files
-         */
         test: /\.(html)$/,
         use: {
           loader: 'html-loader',
@@ -90,7 +119,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: PACKAGE.name,
-      template: './src/index.html',
+      template: path.resolve(__dirname, '../src/index.html'),
+      favicon: './src/assets/favicon.png',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -100,7 +130,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../', 'dist'),
     publicPath: '',
-    filename: 'bundle.js',
+    filename: 'main[hash].js',
   },
   stats: {
     chunks: false,
