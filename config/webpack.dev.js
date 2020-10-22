@@ -38,5 +38,6 @@ module.exports = {
     stats: 'minimal',
     publicPath: '/',
     hot: true,
+    open: true,
   },
 };

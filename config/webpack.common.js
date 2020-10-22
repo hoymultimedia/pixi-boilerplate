@@ -130,7 +130,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../', 'dist'),
     publicPath: '',
-    filename: 'main[hash].js',
+    filename: 'main[fullhash].js',
   },
   stats: {
     chunks: false,
