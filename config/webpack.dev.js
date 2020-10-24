@@ -1,8 +1,10 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
+  target: 'web',
   module: {
     rules: [
       {
@@ -33,10 +35,15 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    // Only update what has changed on hot reload
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
     stats: 'minimal',
     publicPath: '/',
+    inline: true,
     hot: true,
     open: true,
   },
