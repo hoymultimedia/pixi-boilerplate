@@ -1,4 +1,5 @@
-$bg-color: #22353b;
+$bg-color: #ededed;
+$primary-color: #6b5370;
 $animation-delay: 0.4;
 
 @font-face {
@@ -92,7 +93,7 @@ body {
 
   background-color: $bg-color;
 
-  color: #fff;
+  color: $primary-color;
   font-weight: 500;
   font-size: 16px;
   font-family: 'Circular Std', sans-serif;
@@ -110,7 +111,7 @@ body {
   .link {
     width: 20px;
 
-    color: white;
+    color: $primary-color;
     text-decoration: none;
   }
 
@@ -151,7 +152,7 @@ body {
     display: flex;
     top: 40px;
     left: 40px;
-    color: white;
+    color: $primary-color;
     text-decoration: none;
     animation: fadeFromLeft 0.8s ease 1s both;
     animation-delay: $animation-delay;
@@ -190,7 +191,7 @@ body {
     }
 
     .title {
-      color: white;
+      color: $primary-color;
     }
   }
 
@@ -251,20 +252,20 @@ body {
     position: absolute;
     font-size: 60px;
     top: 170px;
-    left: 40px;
+    left: 42px;
 
     font-weight: 500;
     font-size: 16px;
 
-    width: 340px;
-
+    width: 300px;
+    line-height: 22px;
     // pointer-events: none;
 
     animation: fadeIn 0.8s ease 1.8s both;
     animation-timing-function: ease-out;
 
     > a {
-      color: white;
+      color: $primary-color;
     }
 
     @media screen and (max-width: 768px) {
@@ -272,7 +273,8 @@ body {
       left: 20px;
       font-size: 16px;
 
-      width: 260px;
+      width: 320px;
+      line-height: 22px;
 
       animation: fadeInMobile 0.8s ease 1.8s both;
     }

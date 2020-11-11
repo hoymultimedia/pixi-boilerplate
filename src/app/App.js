@@ -22,7 +22,7 @@ export default class App {
       antialias: true,
       autoDensity: true,
       resolution: window.devicePixelRatio,
-      backgroundColor: 0xff0099,
+      backgroundColor: 0xededed,
     });
     appStore.width = this.width;
     appStore.height = this.height;
