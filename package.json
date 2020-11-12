@@ -43,7 +43,6 @@
   "dependencies": {
     "mini-signals": "^1.2.0",
     "pixi.js": "^5.3.3",
-    "save-dev": "0.0.1-security",
     "stats.js": "^0.17.0"
   },
   "browserslist": [
