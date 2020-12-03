@@ -1,4 +1,4 @@
-import { Application } from 'pixi.js';
+import { Application, Sprite, Texture } from 'pixi.js';
 import Stats from 'stats.js';
 import appStore from './appStore';
 import Resources from './Resources';
@@ -44,6 +44,8 @@ export default class App {
   }
 
   start() {
+    const test = new Sprite(Texture.from('circle.png'));
+    this.display.addChild(test);
     this.app.ticker.add(() => {
       this.update();
     });
