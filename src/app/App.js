@@ -44,8 +44,10 @@ export default class App {
   }
 
   start() {
-    const test = new Sprite(Texture.from('circle.png'));
-    this.display.addChild(test);
+    const circle = new Sprite(Texture.from('circle.png'));
+    circle.x = (this.width - circle.width) / 2;
+    circle.y = (this.height - circle.height) / 2;
+    this.display.addChild(circle);
     this.app.ticker.add(() => {
       this.update();
     });
