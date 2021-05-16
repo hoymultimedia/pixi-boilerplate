@@ -1,5 +1,6 @@
 import { Application, Sprite, Texture } from 'pixi.js';
 import Stats from 'stats.js';
+import debounce from 'utils/debounce';
 import appStore from './appStore';
 import Resources from './Resources';
 
@@ -61,10 +62,10 @@ export default class App {
     this.stats.end();
   }
 
-  onResize = () => {
+  onResize = debounce(() => {
     const parent = this.app.view.parentNode;
     if (this.app) {
       this.app.renderer.resize(parent.clientWidth, parent.clientHeight);
     }
-  };
+  }, 150);
 }

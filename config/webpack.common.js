@@ -88,12 +88,14 @@ module.exports = {
           },
         ],
       },
+
       {
         test: /\.(html)$/,
         use: {
           loader: 'html-loader',
           options: {
-            attributes: {
+            esModule: false,
+            sources: {
               list: [
                 {
                   tag: 'img',

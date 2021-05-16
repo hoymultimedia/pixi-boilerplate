@@ -12,14 +12,13 @@ export default class Resources {
 
     const app = application;
     app.loader.concurrency = 2;
-    const devicePixelRatio = 2; // window.devicePixelRatio;
-    if (devicePixelRatio === 2) {
-      // app.loader.add(robotoPng2x);
-      // app.loader.add(robotoFnt2x);
-      app.loader.add(sheet2xPng);
-      app.loader.add(sheet2x);
-      app.loader.add(circle);
-    }
+
+    // app.loader.add(robotoPng2x);
+    // app.loader.add(robotoFnt2x);
+    app.loader.add(sheet2xPng);
+    app.loader.add(sheet2x);
+    app.loader.add(circle);
+
     app.loader.load(() => {
       this.onLoaded.dispatch();
     });
