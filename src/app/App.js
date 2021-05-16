@@ -1,5 +1,6 @@
 import { Application, Sprite, Texture } from 'pixi.js';
-import Stats from 'stats.js';
+import * as PIXI from 'pixi.js';
+import GameStats from 'gamestats.js';
 import debounce from 'utils/debounce';
 import appStore from './appStore';
 import Resources from './Resources';
@@ -33,8 +34,12 @@ export default class App {
   }
 
   setupStats() {
-    this.stats = new Stats();
+    this.stats = new GameStats();
+    this.stats.enableExtension('pixi', [PIXI, this.app]);
+
     document.body.appendChild(this.stats.dom);
+    this.stats.dom.style.top = 'calc(100% - 240px)';
+    this.stats.dom.style.left = '0%';
   }
 
   setupLoading() {

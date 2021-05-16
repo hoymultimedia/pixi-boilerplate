@@ -41,9 +41,9 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
+    "gamestats.js": "^1.0.2",
     "mini-signals": "^1.2.0",
-    "pixi.js": "^6.0.4",
-    "stats.js": "^0.17.0"
+    "pixi.js": "^6.0.4"
   },
   "browserslist": [
     "defaults"
