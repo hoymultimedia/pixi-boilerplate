@@ -61,7 +61,6 @@ export default class App {
 
   update() {
     this.stats.begin();
-
     // update stuff
 
     this.stats.end();

@@ -37,14 +37,15 @@ module.exports = {
   },
   plugins: [
     // Only update what has changed on hot reload
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
-    contentBase: path.join(__dirname, '../dist'),
-    stats: 'minimal',
-    publicPath: '/',
-    inline: true,
-    hot: true,
+    // contentBase: path.join(__dirname, '../dist'),
+    // stats: 'minimal',
+    // publicPath: '/',
     open: true,
+    devMiddleware: {
+      stats: 'minimal',
+    },
   },
 };
